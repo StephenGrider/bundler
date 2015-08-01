@@ -1,3 +1,6 @@
 @Actions = Reflux.createActions [
-  'loadBundles'
+  'indexBundle',
+  'getBundle',
+  'createBundle',
+  'removeBundle'
 ]

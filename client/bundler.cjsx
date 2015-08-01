@@ -7,7 +7,7 @@ if Meteor.isClient
     Utils.buildStores()
     Utils.buildComponents()
 
-    Actions.loadBundles()
+    Actions.indexBundle()
 
     routes = <Router history={history}>
       <Route path="/" component={Components.App}>

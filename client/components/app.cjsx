@@ -9,7 +9,7 @@ Utils.createComponent ->
     error: ''
 
   componentDidMount: ->
-    Actions.loadBundles()
+    Actions.indexBundle()
 
   onChange: (event, payload) ->
     @setState bundles: payload
@@ -39,15 +39,12 @@ Utils.createComponent ->
       </li>
 
   handleDelete: (_id) ->
-    Collections.Bundles.remove _id
-
-    @setState bundles: Collections.Bundles.find().fetch()
+    Actions.removeBundle _id
 
   handleClick: ->
-    Collections.Bundles.insert title: this.state.title, (err) =>
-      message = if err then err.message else ''
-      @setState error: message
+    Actions.createBundle @state.title
+    # , (err) =>
+    #   message = if err then err.message else ''
+    #   @setState error: message
 
-    @setState
-      title: ''
-      bundles: Collections.Bundles.find().fetch()
+    @setState title: ''
