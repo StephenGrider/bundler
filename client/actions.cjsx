@@ -2,5 +2,8 @@
   'indexBundle',
   'getBundle',
   'createBundle',
-  'removeBundle'
+  'removeBundle',
+  'createUser',
+  'logoutUser',
+  'loginUser'
 ]

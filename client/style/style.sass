@@ -1,0 +1,48 @@
+@import "imports"
+
+html
+  height: 100%
+
+.no-gutter
+  margin-left: -15px
+  margin-right: -15px
+
+  @include mediumscreen
+    margin-left: -40px
+    margin-right: -40px
+
+.bundler-app
+  display: flex
+  height: 100%
+  flex-direction: column
+
+  .header,
+  .footer
+    flex: none
+
+  .app-container
+    display: flex
+    flex: 1 0 auto
+    flex-direction: column
+    padding: 0 15px
+
+  .header
+    order: -1
+
+  .app-content
+    flex: 1
+    margin-top: 15px
+
+  .app-left-nav
+    padding: 1em
+
+@include mediumscreen
+  .app-container
+    flex-direction: row
+
+  .app-content
+    padding: 0 20px
+    margin: 0
+
+  .app-left-nav
+    flex: 0 0 12em

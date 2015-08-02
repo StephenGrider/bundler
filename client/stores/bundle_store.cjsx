@@ -14,7 +14,7 @@ Utils.createStore ->
   onGetBundle: ->
 
   onCreateBundle: (payload) ->
-    @collection.insert title: payload.title
+    @collection.insert payload
 
   onRemoveBundle: (id) ->
     @collection.remove id

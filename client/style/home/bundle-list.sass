@@ -1,0 +1,15 @@
+@import "imports"
+
+.bundle-list
+  column-count: 4
+  column-gap: 15px
+  column-fill: auto
+
+  @include largescreen
+    column-count: 3
+
+  @include mediumscreen
+    column-count: 2
+
+  @include smallscreen
+    column-count: 1

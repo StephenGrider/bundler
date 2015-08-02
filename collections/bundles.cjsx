@@ -2,7 +2,7 @@
 
 Bundle = new SimpleSchema
   title:
-    type: Number
+    type: String
     label: 'Title'
     max: 200
 

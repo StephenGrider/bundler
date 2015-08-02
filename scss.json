@@ -1,0 +1,6 @@
+{
+  "enableAutoprefixer": true,
+  "includePaths": [
+    "client/style/imports"
+  ]
+}
