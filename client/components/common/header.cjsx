@@ -29,10 +29,10 @@ Utils.createComponent ->
       ]
     else
       [
-        <Link to="/login" className="nav-button">
+        <Link to="/login" key=1 className="nav-button">
           Log in
         </Link>
-        <Link to="/signup" className="nav-button">
+        <Link to="/signup" key=2 className="nav-button">
           Sign up
         </Link>
       ]

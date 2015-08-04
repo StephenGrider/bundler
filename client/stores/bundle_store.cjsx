@@ -3,15 +3,19 @@ Utils.createStore ->
   data: []
   listenables: Actions
 
+  getInitialState: ->
+    bundles: @data
+
   init: ->
     @collection = Collections.Bundles
     Tracker.autorun @onIndexBundle
 
-  onIndexBundle: ->
+  fetchAll: ->
     @data = @collection.find().fetch()
     @emitChange()
 
-  onGetBundle: ->
+  onIndexBundle: ->
+    @fetchAll()
 
   onCreateBundle: (payload) ->
     @collection.insert payload
@@ -20,4 +24,4 @@ Utils.createStore ->
     @collection.remove id
 
   emitChange: ->
-    @trigger 'change', @data
+    @trigger bundles: @data

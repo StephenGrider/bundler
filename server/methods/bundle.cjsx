@@ -1,6 +1,6 @@
 Meteor.methods
-  createBundle: ->
+  createBundle: (props) ->
 
   editBundle: ->
-  
+
   deleteBundle: ->

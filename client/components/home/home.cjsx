@@ -1,9 +1,6 @@
 Utils.createComponent ->
   name: 'Home'
-  mixins: [ Reflux.listenTo Stores.Bundle, 'onChange' ]
-
-  getInitialState: ->
-    bundles: []
+  mixins: [ Reflux.connect Stores.Bundle ]
 
   componentDidMount: ->
     Actions.indexBundle()

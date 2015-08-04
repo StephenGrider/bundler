@@ -7,5 +7,6 @@ Utils.createComponent ->
     </div>
 
   thumbnails: ->
+    console.log @props
     for bundle in @props.bundles
       <Components.BundleThumbnail key={bundle._id} {...bundle} />

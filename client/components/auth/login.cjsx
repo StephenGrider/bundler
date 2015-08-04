@@ -1,5 +1,5 @@
 Utils.createComponent ->
-  name: 'Login'
+  name: 'Authentication.Login'
 
   getInitialState: ->
     email: ''

@@ -3,7 +3,12 @@
 Bundle = new SimpleSchema
   title:
     type: String
-    label: 'Title'
     max: 200
+  youtubeId:
+    type: String
+  createdBy:
+    type: String
+  likes:
+    type: Number
 
 @Collections.Bundles.attachSchema Bundle

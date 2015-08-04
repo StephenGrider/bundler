@@ -10,7 +10,12 @@ do =>
   Utils.buildComponents = ->
     for spec in _componentSpecs
       spec = spec()
-      Components[spec.name] = React.createClass spec
+      namespace = spec.name.split '.'
+      if namespace.length is 2
+        Components[namespace[0]] ||= {}
+        Components[namespace[0]][namespace[1]] = React.createClass spec
+      else
+        Components[spec.name] = React.createClass spec
 
   Utils.createStore = (spec) ->
     _storeSpecs.push spec
