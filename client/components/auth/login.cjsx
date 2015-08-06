@@ -6,29 +6,31 @@ Utils.createComponent ->
     password: ''
 
   render: ->
-    <form onSubmit={@handleSubmit}>
-      <div>
-        <label htmlFor="email">Email</label>
-        <input
-          onChange={_.partial @handleChange, 'email'}
-          value={@state.email}
-          id="email"
-          type="text"
-          />
-      </div>
+    <main className="app-content authentication-login">
+      <form onSubmit={@handleSubmit}>
+        <div>
+          <label htmlFor="email">Email</label>
+          <input
+            onChange={_.partial @handleChange, 'email'}
+            value={@state.email}
+            id="email"
+            type="text"
+            />
+        </div>
 
-      <div>
-        <label htmlFor="password">Password</label>
-        <input
-          onChange={_.partial @handleChange, 'password'}
-          value={@state.password}
-          id="password"
-          type="password"
-          />
-      </div>
+        <div>
+          <label htmlFor="password">Password</label>
+          <input
+            onChange={_.partial @handleChange, 'password'}
+            value={@state.password}
+            id="password"
+            type="password"
+            />
+        </div>
 
-      <input type="submit" value="Log in" />
-    </form>
+        <button className="btn btn-primary" type="submit">Log In</button>
+      </form>
+    </main>
 
   handleSubmit: (e) ->
     e.preventDefault()
