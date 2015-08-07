@@ -4,6 +4,7 @@ Utils.createStore ->
 
   init: ->
     Tracker.autorun @emitChange
+    @emitChange()
 
   getInitialState: ->
     user: null
@@ -13,8 +14,7 @@ Utils.createStore ->
 
   onLoginUser: (props) ->
     { email, password } = props
-    Meteor.loginWithPassword email, password,
-      (err) => throw err if err
+    Meteor.loginWithPassword email, password, @onAuthenticationSuccess
 
   onLogoutUser: ->
     Meteor.logout()
@@ -22,12 +22,15 @@ Utils.createStore ->
   onCreateUser: (props) ->
     Actions.clearErrors()
     Accounts.createUser _.pick(props, 'email', 'username', 'password'),
-      (error) ->
-        if error
-          Actions.addError error
-        else
-          navigate '/'
-          Actions.clearErrors()
+      @onAuthenticationSuccess
+
+  onAuthenticationSuccess: (error) ->
+    if error
+      Actions.addError error
+    else
+      navigate '/'
+      @emitChange()
+      Actions.clearErrors()
 
   emitChange: ->
     @trigger user: Meteor.user()

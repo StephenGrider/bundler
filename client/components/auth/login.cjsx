@@ -1,5 +1,9 @@
 Utils.createComponent ->
   name: 'Authentication.Login'
+  mixins: [
+    Reflux.connect Stores.Errors
+    Mixins.Validation
+  ]
 
   getInitialState: ->
     email: ''
@@ -8,6 +12,7 @@ Utils.createComponent ->
   render: ->
     <main className="app-content authentication-login">
       <form onSubmit={@handleSubmit}>
+        {@errors()}
         <div>
           <label htmlFor="email">Email</label>
           <input

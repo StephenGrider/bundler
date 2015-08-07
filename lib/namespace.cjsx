@@ -1,3 +1,4 @@
 @Stores = {}
 @Components = {}
 @Collections = {}
+@Mixins = {}
