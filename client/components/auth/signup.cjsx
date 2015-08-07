@@ -1,5 +1,6 @@
 Utils.createComponent ->
-  name: 'Signup'
+  name: 'Authentication.Signup'
+  mixins: [ Reflux.connect Stores.Errors ]
 
   getInitialState: ->
     username: ''
@@ -7,9 +8,20 @@ Utils.createComponent ->
     password: ''
     passwordConfirm: ''
 
+  componentWillMount: ->
+    Actions.clearErrors()
+
+  errors: ->
+    return unless @state.error
+
+    <div className="alert alert-warning">
+      {@state.error?.reason}
+    </div>
+
   render: ->
     <main className="app-content authentication-signup">
       <form onSubmit={@handleSubmit}>
+        {@errors()}
         <div>
           <label htmlFor="username">Username</label>
           <input

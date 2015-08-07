@@ -20,8 +20,14 @@ Utils.createStore ->
     Meteor.logout()
 
   onCreateUser: (props) ->
-    Accounts.createUser _.pick props, 'email', 'username', 'password',
-      (err) => throw err if err
+    Actions.clearErrors()
+    Accounts.createUser _.pick(props, 'email', 'username', 'password'),
+      (error) ->
+        if error
+          Actions.addError error
+        else
+          navigate '/'
+          Actions.clearErrors()
 
   emitChange: ->
     @trigger user: Meteor.user()

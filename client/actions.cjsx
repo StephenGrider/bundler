@@ -5,5 +5,7 @@
   'removeBundle',
   'createUser',
   'logoutUser',
-  'loginUser'
+  'loginUser',
+  'clearErrors',
+  'addError'
 ]

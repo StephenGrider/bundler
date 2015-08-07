@@ -14,6 +14,6 @@ requireAdmin = ->
           <Route path="bundles" component={Components.Admin.BundleList} />
         </Route>
         <Route path="login" component={Components.Authentication.Login} />
-        <Route path="signup" component={Components.Signup} />
+        <Route path="signup" component={Components.Authentication.Signup} />
       </Route>
     </Router>, document.body

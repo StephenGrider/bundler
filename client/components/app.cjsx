@@ -2,7 +2,11 @@ Utils.createComponent ->
   name: 'App'
   mixins: [
     Reflux.connect Stores.AuthenticatedUser
+    ReactRouter.Navigation
   ]
+
+  componentWillMount: ->
+    window.navigate = @transitionTo
 
   render: ->
     content = @props.children or <Components.Home {...@props} />

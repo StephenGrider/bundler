@@ -1,8 +1,6 @@
 Utils.createComponent ->
   name: 'Admin.Main'
-  mixins: [
-    Reflux.connect Stores.Bundle
-  ]
+  mixins: [ Reflux.connect Stores.Bundle ]
 
   render: ->
     <main className="app-content admin-main">
