@@ -11,7 +11,8 @@ requireAdmin = ->
     React.render <Router history={history}>
       <Route path="/" component={Components.App}>
         <Route path="admin" onEnter={requireAdmin} component={Components.Admin.Main}>
-          <Route path="bundles" component={Components.Admin.BundleList} />
+          <Route path="index" component={Components.Admin.Index} />
+          <Route path="new" component={Components.Admin.Create} />
         </Route>
         <Route path="login" component={Components.Authentication.Login} />
         <Route path="signup" component={Components.Authentication.Signup} />
