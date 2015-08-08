@@ -1,8 +1,9 @@
 {Router, Route, @Link} = ReactRouter
-{history} = ReactRouter.lib.HashHistory
+{history} = ReactRouter.lib.BrowserHistory
 
 requireAuth = (nextState, transition) ->
   unless Meteor.user()
+
     transition.to '/login'
 
 requireAdmin = (transition) ->
