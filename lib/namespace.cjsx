@@ -2,3 +2,4 @@
 @Components = {}
 @Collections = {}
 @Mixins = {}
+@Models = {}

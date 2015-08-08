@@ -9,9 +9,8 @@ Utils.createComponent ->
         </h1>
       </Link>
       <div className="nav-button-wrapper">
-
-        <Link to="/wishlist" className="nav-button">
-          WishList
+        <Link to="/admin/create" className="nav-button">
+          Admin Create
         </Link>
         {@authenticationLink()}
       </div>

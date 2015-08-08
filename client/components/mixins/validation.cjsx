@@ -3,7 +3,7 @@ Mixins.Validation =
     Actions.clearErrors()
 
   errors: ->
-    return unless @state.error
+    return null unless @state.error
 
     <div className="alert alert-warning">
       {@state.error?.reason}

@@ -1,5 +1,6 @@
 Meteor.methods
-  createBundle: (props) ->
+  createBundle: (attrs) ->
+    Collections.Bundles.insert attrs
 
   editBundle: ->
 

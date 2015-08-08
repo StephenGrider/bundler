@@ -3,7 +3,6 @@
 
 requireAuth = (nextState, transition) ->
   unless Meteor.user()
-
     transition.to '/login'
 
 requireAdmin = (transition) ->

@@ -17,8 +17,13 @@ Utils.createStore ->
   onIndexBundle: ->
     @fetchAll()
 
-  onCreateBundle: (payload) ->
-    @collection.insert payload
+  onCreateBundle: (model) ->
+    model.save (error) ->
+      if error
+        Actions.addError error
+      else
+        navigate '/admin/index'
+        Actions.clearErrors()
 
   onRemoveBundle: (id) ->
     @collection.remove id
