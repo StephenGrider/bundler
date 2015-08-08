@@ -39,6 +39,7 @@ Utils.createComponent ->
 
   handleSubmit: (e) ->
     e.preventDefault()
+    Actions.clearErrors()
     Actions.loginUser @state
 
   handleChange: (prop, event) ->

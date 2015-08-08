@@ -1,5 +1,5 @@
 Utils.createStore ->
-  name: 'AuthenticatedUser'
+  name: 'Authentication'
   listenables: Actions
 
   init: ->

@@ -1,16 +1,17 @@
 {Router, Route, @Link} = ReactRouter
 {history} = ReactRouter.lib.HashHistory
 
-requireAuth = ->
+requireAuth = (nextState, transition) ->
+  unless Meteor.user()
+    transition.to '/login'
 
-requireAdmin = ->
-
+requireAdmin = (transition) ->
 
 @Router =
   start: ->
     React.render <Router history={history}>
       <Route path="/" component={Components.App}>
-        <Route path="admin" onEnter={requireAdmin} component={Components.Admin.Main}>
+        <Route path="admin" onEnter={requireAuth} component={Components.Admin.Main}>
           <Route path="index" component={Components.Admin.Index} />
           <Route path="create" component={Components.Admin.Create} />
         </Route>

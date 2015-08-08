@@ -1,7 +1,7 @@
 Utils.createComponent ->
   name: 'App'
   mixins: [
-    Reflux.connect Stores.AuthenticatedUser
+    Reflux.connect Stores.Authentication
     ReactRouter.Navigation
   ]
 
