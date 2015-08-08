@@ -3,5 +3,5 @@ Utils.createComponent ->
 
   render: ->
     <div className="carousel no-gutter">
-      <img src="/images/hero.jpg"></img>
+      I am a carousel
     </div>
