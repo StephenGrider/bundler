@@ -5,7 +5,7 @@ Utils.createComponent ->
   render: ->
     <div>
       {@tableHeader()}
-      <ul className="admin-bundle-list">
+      <ul className="admin-index">
         {@renderBundle bundle for bundle in @state.bundles}
       </ul>
     </div>
@@ -21,7 +21,7 @@ Utils.createComponent ->
 
   tableHeader: ->
     <div className="table-header">
-      <Link to='/admin/new'>
+      <Link to='/admin/create'>
         <Components.IconButton className="btn-primary" icon="plus">
           Add
         </Components.IconButton>
